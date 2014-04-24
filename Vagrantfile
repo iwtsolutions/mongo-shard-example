@@ -10,6 +10,9 @@ Vagrant.configure("2") do |config|
     config.vm.provision :shell, :path => 'bootstrap.sh'
     config.vm.provision :shell, :path => 'installMongo.sh'
     config.vm.provision :shell, :path => 'copyAndMoveHostFile.sh'
+    config.vm.provision :shell, :path => 'copyMongodConfAndRestart.sh'
+    #optional if you wish to have vim installed on your vms
+    #config.vm.provision :shell, :path => 'installVim.sh'
 
   config.vm.define :mongodb1 do |mongodb1|
     mongodb1.vm.hostname = "mongodb1"
